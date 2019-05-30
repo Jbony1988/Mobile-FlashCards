@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-class DeckListView extends Component {
+class AddDeck extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,10 +11,10 @@ class DeckListView extends Component {
   render() {
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text> Deck list view </Text>
+        <Text> AddDeck </Text>
       </View>
     );
   }
 }
 
-export default DeckListView;
+export default AddDeck;
