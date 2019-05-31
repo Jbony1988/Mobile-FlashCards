@@ -30,7 +30,9 @@ class NewDeckView extends Component {
         placeholder='Enter title of new deck'
         value={text}
         onChangeText={(text) =>  this.setState({text})} />
-        <SubmitBtn onPress={() => alert('test')} />
+        <SubmitBtn 
+        btnText='Submit'
+        onPress={() => alert('test')} />
       </View>
     );
   }

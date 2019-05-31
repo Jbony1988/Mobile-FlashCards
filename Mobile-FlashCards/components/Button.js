@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity, Platform, StyleSheet } from "react-native";
 
-export default function SubmitBtn({ onPress, style }) {
+export default function SubmitBtn({ onPress, style, btnText }) {
   return (
     <TouchableOpacity
       style={[
@@ -10,7 +10,7 @@ export default function SubmitBtn({ onPress, style }) {
       ]}
       onPress={onPress}
     >
-      <Text style={styles.submitBtnText}>SUBMIT</Text>
+      <Text style={styles.submitBtnText}>{btnText}</Text>
     </TouchableOpacity>
   );
 }

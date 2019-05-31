@@ -48,6 +48,8 @@ class AddDeck extends Component {
         params: { deck, questionLength }
       })
     );
+
+    this.props.navigation.navigate('Home')
   };
 
   render() {
