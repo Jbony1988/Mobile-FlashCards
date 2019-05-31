@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import Button from "../components/Button";
+import SubmitBtn from "../components/Button";
 import { blue, white, darkBlue } from "../utils/colors";
 import { connect } from "react-redux";
 // import { clearLocalNotifications, setLocalNotification } from "../utils/api";
@@ -31,7 +31,8 @@ class NewQuestionView extends Component {
             {stateQuestionLength} {stateQuestionLength === 1 ? "Card" : "Cards"}
           </Text>
 
-          <Button
+          <SubmitBtn
+          style={{marginVertical: 10}}
           btnText='Add question'
             onPress={() =>
               this.props.navigation.navigate("AddQuestion", {
@@ -42,8 +43,10 @@ class NewQuestionView extends Component {
             
           />
      
-
-          <Buttons onPress={this.startQuiz}>Start Quiz</Buttons>
+          <SubmitBtn 
+          btnText='Start Quiz'
+          onPress={this.startQuiz}/>
+          {/* <Buttons onPress={this.startQuiz}>Start Quiz/></Buttons> */}
 
           <Text style={styles.error}>
             {canStart === false

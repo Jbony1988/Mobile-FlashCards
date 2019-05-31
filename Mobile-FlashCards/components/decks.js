@@ -10,9 +10,9 @@ class Deck extends Component {
     return (
       <View style={styles.cardDash}>
         <TouchableOpacity
-        //   onPress={() =>
-        //     this.props.navigation.navigate("DeckZoom", { deck, questionLength })
-        //   }
+          onPress={() =>
+            this.props.navigation.navigate("NewQuestionView", { deck, questionLength })
+          }
           style={styles.availableDecks}
         >
           <Text style={styles.topText}>{title}</Text>

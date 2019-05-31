@@ -24,7 +24,7 @@ const StackNav = createStackNavigator({
       }
     })
   },
-  NewQuestion: {
+  NewQuestionView: {
     screen: NewQuestionView,
     navigationOptions: ({ navigation }) => ({
       headerTintColor: white,

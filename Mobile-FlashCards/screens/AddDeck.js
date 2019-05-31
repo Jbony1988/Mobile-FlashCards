@@ -32,26 +32,25 @@ class AddDeck extends Component {
       this.props.dispatch(addDeck(newDeck));
 
       saveDeck(newDeck);
-
     }
   }
 
+goToHome = () => {
+this.props.navigation.navigate('Home')
+}
 
-  toHome = deck => {
-    const { text } = this.state;
-    const questions = deck.questions;
-    const questionLength = questions ? deck.questions.length : 0;
+toHome = deck => {
+  const { text } = this.state;
+  const questions = deck.questions;
+  const questionLength = questions ? deck.questions.length : 0;
 
-    this.props.navigation.dispatch(
-      NavigationActions.navigate({
-        routeName: "Home",
-        params: { deck, questionLength }
-      })
-    );
-
-    this.props.navigation.navigate('Home')
-  };
-
+  this.props.navigation.dispatch(
+    NavigationActions.navigate({
+      routeName: "NewQuestionView",
+      params: { deck, questionLength }
+    })
+  );
+};
   render() {
     const { text, isSubmit } = this.state;
     console.log(text);
@@ -75,7 +74,9 @@ class AddDeck extends Component {
           {isSubmit === false ? "This field is required" : ""}
         </Text>
         </View>
-        <SubmitBtn style={styles.btnStyle} onPress={this.submitDeck} />
+        <SubmitBtn 
+        btnText='Submit'
+        style={styles.btnStyle} onPress={this.submitDeck} />
       </View>
     );
   }

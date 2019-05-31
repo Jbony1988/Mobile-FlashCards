@@ -44,11 +44,6 @@ class DeckListView extends Component {
               const questionLength = questions ? currDeck.questions.length : 0;
 
               return (
-                // <View 
-                // style={{alignItems: 'center'}}
-                // key={currDeck.id}>
-                //   <Text>{currDeck.title}</Text>
-                //   </View>
                 <Deck
                   key={currDeck.id}
                   title={currDeck.title}
