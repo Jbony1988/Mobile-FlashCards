@@ -6,6 +6,7 @@ import AddDeck from "../screens/AddDeck";
 import QuizView from "../screens/QuizView";
 import NewQuestionView from "../screens/NewQuestionView";
 import { white, blue } from "../utils/colors";
+import AddQuestion from '../screens/AddQuestion';
 import DeckListView from "../screens/DeckListView";
 
 const StackNav = createStackNavigator({
@@ -36,6 +37,16 @@ const StackNav = createStackNavigator({
 
   Quiz: {
     screen: QuizView,
+    navigationOptions: ({ navigation }) => ({
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: blue
+      }
+    })
+  },
+
+  AddQuestion: {
+    screen: AddQuestion,
     navigationOptions: ({ navigation }) => ({
       headerTintColor: white,
       headerStyle: {

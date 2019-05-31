@@ -17,7 +17,7 @@ class NewQuestionView extends Component {
     } else {
       this.setState({ canStart: true });
       this.props.navigation.navigate("Quiz", { stateDeck });
-      clearLocalNotifications().then(setLocalNotification);
+      // clearLocalNotifications().then(setLocalNotification);
     }
   };
   render() {
