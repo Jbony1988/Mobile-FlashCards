@@ -1,4 +1,5 @@
 import React from "react";
+import { lightPurple, blue } from '../utils/colors'
 import { Text, TouchableOpacity, Platform, StyleSheet } from "react-native";
 
 export default function SubmitBtn({ onPress, style, btnText }) {
@@ -6,7 +7,7 @@ export default function SubmitBtn({ onPress, style, btnText }) {
     <TouchableOpacity
       style={[
         Platform.OS === "ios" ? styles.iosSubmitBtn : styles.AndroidSubmitBtn,
-         style 
+        style
       ]}
       onPress={onPress}
     >
@@ -17,7 +18,7 @@ export default function SubmitBtn({ onPress, style, btnText }) {
 
 const styles = StyleSheet.create({
   iosSubmitBtn: {
-    backgroundColor: "blue",
+    backgroundColor: blue,
     padding: 10,
     borderRadius: 7,
     height: 45,
@@ -25,15 +26,12 @@ const styles = StyleSheet.create({
     marginRight: 40
   },
   AndroidSubmitBtn: {
-    backgroundColor: "blue",
+    backgroundColor: blue,
     padding: 10,
-    paddingLeft: 30,
-    paddingRight: 30,
+    borderRadius: 7,
     height: 45,
-    borderRadius: 2,
-    alignSelf: "flex-end",
-    justifyContent: "center",
-    alignItems: "center"
+    marginLeft: 40,
+    marginRight: 40
   },
   submitBtnText: {
     color: "white",

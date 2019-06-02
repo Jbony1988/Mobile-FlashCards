@@ -7,7 +7,7 @@ import {
   KeyboardAvoidingView
 } from "react-native";
 import { blue, white, darkBlue } from "../utils/colors";
-import SubmitBtn from '../components/Button'
+import SubmitBtn from "../components/Button";
 import { addQuestionToDeck } from "../actions";
 import { connect } from "react-redux";
 import { addCardToDeck } from "../utils/api";
@@ -22,13 +22,13 @@ class AddQuestion extends Component {
     isSubmit: ""
   };
 
-  handleQChange = text => {
+  handleQuestionChange = text => {
     this.setState({
       question: text.nativeEvent.text
     });
   };
 
-  handleAChange = text => {
+  handleAnswerChange = text => {
     this.setState({
       answer: text.nativeEvent.text
     });
@@ -82,7 +82,7 @@ class AddQuestion extends Component {
 
           <TextInput
             maxLength={75}
-            onChange={text => this.handleQChange(text)}
+            onChange={text => this.handleQuestionChange(text)}
             style={styles.input}
             placeholder="Question"
           />
@@ -93,7 +93,7 @@ class AddQuestion extends Component {
 
           <TextInput
             maxLength={75}
-            onChange={text => this.handleAChange(text)}
+            onChange={text => this.handleAnswerChange(text)}
             style={styles.input}
             placeholder="Answer"
           />
@@ -102,9 +102,7 @@ class AddQuestion extends Component {
             {isABlank === true ? "This field is required" : ""}
           </Text>
 
-            <SubmitBtn 
-            btnText='Submit'
-            onPress={this.submitDeck}/>
+          <SubmitBtn btnText="Submit" onPress={this.submitDeck} />
         </KeyboardAvoidingView>
       );
     }
@@ -127,17 +125,20 @@ const styles = StyleSheet.create({
   },
   input: {
     justifyContent: "center",
-    alignSelf: "center",
+    alignItems: "center",
     width: 300,
     height: 40,
     borderColor: "gray",
     borderWidth: 1,
-    paddingLeft: 10
+    borderColor: "#000000",
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingLeft: 8
   },
   titleText: {
     fontSize: 20,
     width: 300,
-    marginBottom: 50,
+    marginBottom: 10,
     marginTop: 100,
     textAlign: "center"
   },

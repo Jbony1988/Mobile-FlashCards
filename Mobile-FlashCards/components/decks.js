@@ -5,13 +5,16 @@ import { connect } from "react-redux";
 
 class Deck extends Component {
   render() {
-    const { title, questions, questionLength, deck } = this.props;
+    const { title, questionLength, deck, isDecks } = this.props;
 
     return (
       <View style={styles.cardDash}>
         <TouchableOpacity
           onPress={() =>
-            this.props.navigation.navigate("NewQuestionView", { deck, questionLength })
+            this.props.navigation.navigate("NewQuestionView", {
+              deck,
+              questionLength
+            })
           }
           style={styles.availableDecks}
         >
@@ -40,14 +43,16 @@ const styles = StyleSheet.create({
   },
   cardText: {
     textAlign: "center",
-    fontSize: 20
+    fontSize: 20,
+    color: "white"
   },
   topText: {
     textAlign: "center",
     fontSize: 32,
     color: lightBlue,
     paddingBottom: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    color: "white"
   }
 });
 

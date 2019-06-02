@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 import { blue, white, darkBlue } from "../utils/colors";
-import SubmitBtn from '../components/Button';
-
+import SubmitBtn from "../components/Button";
 
 class QuizView extends Component {
   state = {
@@ -52,14 +51,14 @@ class QuizView extends Component {
     }
   };
 
-  addCorrect = () => {
+  addCorrectAnwser = () => {
     this.setState(currState => ({
       correct: currState.correct + 1
     }));
 
     this.goToNext();
   };
-  addIncorrect = () => {
+  addIncorrectAnswer = () => {
     this.setState(currState => ({
       incorrect: currState.incorrect + 1
     }));
@@ -92,9 +91,7 @@ class QuizView extends Component {
         questionLength,
         currentQuestionIndex,
         currentQuestion,
-        showAnswer,
-        correct,
-        incorrect
+        showAnswer
       } = this.state;
       return (
         <View style={styles.container}>
@@ -107,9 +104,10 @@ class QuizView extends Component {
               <Text style={styles.miniHeader}>Question</Text>
               <Text style={styles.QnAText}>{currentQuestion.question}</Text>
               <View style={styles.buttonContainer}>
-                <SubmitBtn 
-                onPress={this.showAnswer}
-                btnText='Show Answer'
+                <SubmitBtn
+                  style={{ marginVertical: 10 }}
+                  onPress={this.showAnswer}
+                  btnText="Show Answer"
                 />
               </View>
             </View>
@@ -118,13 +116,15 @@ class QuizView extends Component {
             <View>
               <Text style={styles.miniHeader}>Answer</Text>
               <Text style={styles.QnAText}>{currentQuestion.answer}</Text>
-              <SubmitBtn 
-              btnText='Correct'
-              onPress={this.addCorrect}/>
-              <SubmitBtn 
-              btnText='Incorrect'
-              onPress={this.addIncorrect}/>
-  
+              <SubmitBtn
+                style={{ marginVertical: 20 }}
+                btnText="Correct"
+                onPress={this.addCorrectAnwser}
+              />
+              <SubmitBtn
+                btnText="Incorrect"
+                onPress={this.addIncorrectAnswer}
+              />
             </View>
           )}
         </View>
@@ -132,7 +132,7 @@ class QuizView extends Component {
     }
 
     if (isComplete === true) {
-      const { questionLength, correct, incorrect } = this.state;
+      const { questionLength, correct } = this.state;
       return (
         <View style={styles.container}>
           <Text style={styles.questionHeading}>Quiz Complete</Text>
@@ -145,14 +145,12 @@ class QuizView extends Component {
             {" "}
             {Math.round((correct / questionLength) * 100)}%{" "}
           </Text>
-          <SubmitBtn 
-          btnText='Try Again'
-          onPress={this.tryAgain}/>
-          <SubmitBtn 
-          btnText='Try Again'
-          onPress={this.exit}/>
-          {/* <Buttons onPress={this.tryAgain}>Try again</Buttons>
-          <Buttons onPress={this.exit}>Exit Quiz</Buttons> */}
+          <SubmitBtn
+            style={{ marginVertical: 20 }}
+            btnText="Try Again"
+            onPress={this.tryAgain}
+          />
+          <SubmitBtn btnText="Exit Quiz" onPress={this.exit} />
         </View>
       );
     }

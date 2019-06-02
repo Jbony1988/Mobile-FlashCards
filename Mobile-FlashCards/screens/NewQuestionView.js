@@ -3,7 +3,10 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import SubmitBtn from "../components/Button";
 import { blue, white, darkBlue } from "../utils/colors";
 import { connect } from "react-redux";
-// import { clearLocalNotifications, setLocalNotification } from "../utils/api";
+import {
+  clearLocalNotifications,
+  setLocalNotification
+} from "../utils/helpers";
 
 class NewQuestionView extends Component {
   state = {
@@ -17,7 +20,7 @@ class NewQuestionView extends Component {
     } else {
       this.setState({ canStart: true });
       this.props.navigation.navigate("Quiz", { stateDeck });
-      // clearLocalNotifications().then(setLocalNotification);
+      clearLocalNotifications().then(setLocalNotification);
     }
   };
   render() {
@@ -32,25 +35,21 @@ class NewQuestionView extends Component {
           </Text>
 
           <SubmitBtn
-          style={{marginVertical: 10}}
-          btnText='Add question'
+            style={{ marginVertical: 10 }}
+            btnText="Add question"
             onPress={() =>
               this.props.navigation.navigate("AddQuestion", {
                 stateDeck,
                 stateQuestionLength
               })
             }
-            
           />
-     
-          <SubmitBtn 
-          btnText='Start Quiz'
-          onPress={this.startQuiz}/>
-          {/* <Buttons onPress={this.startQuiz}>Start Quiz/></Buttons> */}
+
+          <SubmitBtn btnText="Start Quiz" onPress={this.startQuiz} />
 
           <Text style={styles.error}>
             {canStart === false
-              ? "Cannot start quiz. Please add questions first"
+              ? "Please create questions to take a quiz please!"
               : ""}
           </Text>
         </View>
