@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet} from "react-native";
 import { connect } from "react-redux";
-import { blue, white, darkBlue } from "../utils/colors";
+import { blue, darkBlue } from "../utils/colors";
 import SubmitBtn from "../components/Button";
 
 class QuizView extends Component {

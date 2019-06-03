@@ -1,6 +1,5 @@
 import { AsyncStorage } from "react-native";
 
-
 export const DECK_STORAGE_KEY = "MobileFlashcards:decks";
 
 export function getDecks() {
@@ -31,8 +30,6 @@ export function saveDeck(deck) {
   );
 }
 
-function getDeck(id) {}
-
 export function addCardToDeck(deck, question, answer) {
   const card = { question, answer };
   const deckID = deck.id;
@@ -55,4 +52,3 @@ export function addCardToDeck(deck, question, answer) {
     );
   });
 }
-

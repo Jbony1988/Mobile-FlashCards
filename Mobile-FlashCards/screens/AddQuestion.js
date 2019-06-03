@@ -49,7 +49,7 @@ class AddQuestion extends Component {
       ? this.setState({ isABlank: true })
       : this.setState({ isABlank: false });
 
-    const { stateDeck, stateQuestionLength } = this.props;
+    const { stateDeck } = this.props;
     if (question && answer) {
       this.props.dispatch(addQuestionToDeck(stateDeck.id, question, answer));
       addCardToDeck(stateDeck, question, answer);
@@ -71,8 +71,8 @@ class AddQuestion extends Component {
   };
 
   render() {
-    const { stateDeck, stateQuestionLength } = this.props;
-    const { isSubmit, isABlank, isQBlank } = this.state;
+    const { stateDeck } = this.props;
+    const { isABlank, isQBlank } = this.state;
     if (stateDeck) {
       return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
   }
 });
 
-function mapStateToProps(state, { navigation }) {
+function mapStateToProps({ navigation }) {
   const { stateDeck, stateQuestionLength } = navigation.state.params;
   return {
     stateDeck,
