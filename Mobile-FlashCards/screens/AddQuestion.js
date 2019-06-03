@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
   }
 });
 
-function mapStateToProps({ navigation }) {
+function mapStateToProps(state, { navigation }) {
   const { stateDeck, stateQuestionLength } = navigation.state.params;
   return {
     stateDeck,

@@ -8,7 +8,6 @@ import middleware from './middleware'
 import StackNav from './router/StackNav';
 import { Constants} from 'expo'
 import {setLocalNotification } from './utils/helpers'
-import { purple, lightPurp} from './utils/colors'
 
 function UdaciStausBar ({backgroundColor, ...props }) {
   return (
