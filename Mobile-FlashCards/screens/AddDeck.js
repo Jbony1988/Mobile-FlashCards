@@ -53,18 +53,11 @@ class AddDeck extends Component {
     const { text, isSubmit } = this.state;
     console.log(text);
     return (
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <Text style={{ textAlign: "center", fontSize: 34, marginBottom: 20 }}>
-          What is the title of your new deck?
-        </Text>
+      <View style={styles.wrapper}>
+        <Text style={styles.title}>What is the title of your new deck?</Text>
         <View style={{ marginHorizontal: 10 }}>
           <TextInput
-            style={{
-              borderColor: "#000000",
-              borderWidth: 1,
-              borderRadius: 8,
-              padding: 10
-            }}
+            style={styles.textInputStyle}
             placeholder="Deck title"
             onChangeText={text => this.setState({ text: text })}
           />
@@ -88,6 +81,21 @@ const styles = StyleSheet.create({
   },
   error: {
     color: "red"
+  },
+  textInputStyle: {
+    borderColor: "#000000",
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 10
+  },
+  title: {
+    textAlign: "center",
+    fontSize: 34,
+    marginBottom: 20
+  },
+  wrapper: {
+    flex: 1,
+    justifyContent: "center"
   }
 });
 

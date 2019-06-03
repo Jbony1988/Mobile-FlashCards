@@ -7,12 +7,6 @@ import { receiveDecks } from "../actions";
 import {blue, purple, lightBlue} from '../utils/colors'
 
 class DeckListView extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-
   componentDidMount() {
     const { dispatch } = this.props;
 

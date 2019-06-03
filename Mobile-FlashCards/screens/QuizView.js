@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { blue, darkBlue } from "../utils/colors";
 import SubmitBtn from "../components/Button";
@@ -80,7 +80,7 @@ class QuizView extends Component {
   };
 
   exit = () => {
-    this.props.navigation.navigate("DeckList");
+    this.props.navigation.navigate("NewQuestionView");
   };
   render() {
     const { stateDeck } = this.props;
@@ -99,7 +99,7 @@ class QuizView extends Component {
             Question {currentQuestionIndex + 1} of {questionLength}
           </Text>
 
-          {showAnswer === false && (
+          {!showAnswer && (
             <View>
               <Text style={styles.miniHeader}>Question</Text>
               <Text style={styles.QnAText}>{currentQuestion.question}</Text>
@@ -112,7 +112,7 @@ class QuizView extends Component {
               </View>
             </View>
           )}
-          {showAnswer === true && (
+          {showAnswer && (
             <View>
               <Text style={styles.miniHeader}>Answer</Text>
               <Text style={styles.QnAText}>{currentQuestion.answer}</Text>
